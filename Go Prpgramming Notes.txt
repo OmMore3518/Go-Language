@@ -1,0 +1,30 @@
+Why we put the name of the package is the "Main" cause it us the special name that tells the programe that it is the entry point of 
+the program. And tells where execution starts.
+
+For running the programme in the Command line like in the developers end in the console there is command "GO Run project.Go"
+These is use to run the progeram at the developer end or to the people also that have already installed GO on there systems but for production ready app we need to follow the following things:
+
+Go Build:- 
+It is the command to create an executable file at the end of the programme that will help to the user that run the go project without installing the GO on there systems.
+
+What is module: 
+1 module have multiple packages.
+A module is Simply a Go project.
+
+
+
+For Initializing the module to the go project we have a command:
+Go mod init (with it's name / Path where it can found)
+"Go mod init example.com/first-app"
+
+Now the module is created called go.mod
+and after that we entered the command "Go build".
+Then it create an executable file called "first-app.exe" that helps to run our programme without installing the go in our system or users system.
+
+Now in the developer side we can run our app directly by "go run ."
+
+
+If we change the package name from main to other then "Go build" and "Go mod init" doesn't work cause they don't know where is the insertion point of the programme is.
+
+
+For Converting float ino int we use float64(int variable).
