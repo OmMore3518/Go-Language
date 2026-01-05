@@ -28,3 +28,13 @@ If we change the package name from main to other then "Go build" and "Go mod ini
 
 
 For Converting float ino int we use float64(int variable).
+
+Go Doesn't allow us to mix the data types like we could not add integer and float.For that we need to type conversion of int to float.
+
+We can do the type conversion at the time of declaration of the variable like:
+var initialValue float64 = 1000 // Using these type of this var becomes float.
+
+
+We can declare and assign the value of the variable by the following syntax also:
+initalValue := 1000; 
+but it does not allowed explicityly type conversion like above. we can only use this type of declaration when we are ready to accept the data that go defines.
