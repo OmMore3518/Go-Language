@@ -38,3 +38,17 @@ var initialValue float64 = 1000 // Using these type of this var becomes float.
 We can declare and assign the value of the variable by the following syntax also:
 initalValue := 1000; 
 but it does not allowed explicityly type conversion like above. we can only use this type of declaration when we are ready to accept the data that go defines.
+
+For using/writing the String in the multiple line in GO we have to enclose that string within `` backsticks not in double quotes.
+
+For creating the user define function we can use "func" keyword along with the function name with paranthesis that is used for take the input parameters from the user.
+
+ex:- func outPut(text string, value int){}	
+
+In the Go If we declare the variable inside the function then it'll be scope level it is only accessibl in the same function only for making it global we need to write that variable outside of the method. after import.
+
+We can only write constant and variables putside of the method not buildin methods like fmt.print()
+
+
+:= Create and assign the value to the variable.
+= Just assign the value to the variable.
