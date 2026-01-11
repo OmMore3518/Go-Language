@@ -1,34 +1,17 @@
 package main
 
 import (
-	"errors"
 	"fmt"
-	"os"
-	"strconv"
+
+	"example.com/bank/read"
 )
 
-func readFromFile() (float64,error){
-	byteop, err:=os.ReadFile("balance.txt")
-	if(err != nil){
-		return 1000, errors.New("Balnce file not found")
-	}
-	stringop:= string(byteop)
-	ans, err := strconv.ParseFloat(stringop,64)
-	if(err!=nil){
-		return 1000, errors.New("Cannot Converted to float")
-	}
-	return ans, nil
-}
 
-func writeIntoFile(balance float64){
-	balanceText := fmt.Sprint(balance)
-	os.WriteFile("balance.txt", []byte(balanceText), 0644)
-}
 
 
 func main(){
 	var choice int
-	balance,error:= readFromFile()
+	balance,error:= read.ReadFromFile()
 	if(error!=nil){
 		fmt.Print("Error!!")
 		fmt.Println(error)
@@ -40,13 +23,7 @@ func main(){
     num := true
 	//loop :
 	for num{
-    fmt.Println("Welcome to Go Bank!")
-	fmt.Println("Please enter your choice:")
-	fmt.Println("1.Check Balance")
-	fmt.Println("2.Add Amount")
-	fmt.Println("3.Withdraw Amount")
-	fmt.Println("4.Exit")
-
+	outputText()
 	fmt.Scan(&choice)
 
 	switch choice {
@@ -58,7 +35,7 @@ func main(){
 		if amount>0{
 			balance+=amount
 			fmt.Println("Amount Successfully Added")
-			writeIntoFile(balance)
+			read.WriteIntoFile(balance)
 		}else{
 			fmt.Println("Please Enter Positive Amount")
 		}
@@ -69,7 +46,7 @@ func main(){
 		if wamount>0 && wamount<=balance {
 			balance -= wamount
 			fmt.Println("Balance Withdrawn Successfully")
-			writeIntoFile(balance)
+			read.WriteIntoFile(balance)
 		}else{
 			fmt.Println("Insufficient Balnace..!!")
 		}
